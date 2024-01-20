@@ -6,7 +6,7 @@ from sqlalchemy.orm import relationship
 from models import storage_type
 
 
-class Place(BaseModel):
+class Place(BaseModel, Base):
     """ A place to stay """
 
     if storage_type == 'db':
