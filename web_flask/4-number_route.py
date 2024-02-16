@@ -47,7 +47,7 @@ def hbnb_python(text="is cool"):
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
     """ Display 'n is a number' only if n is an integer """
-    return "n is a number"
+    return "{} is a number".format(n)
 
 
 if __name__ == '__main__':
