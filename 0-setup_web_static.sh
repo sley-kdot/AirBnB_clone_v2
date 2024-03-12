@@ -20,6 +20,7 @@ mkdir -p data/web_static/shared
 # Create the folder /data/web_static/releases/test/ if it doesn’t already exist
 mkdir -p data/web_static/releases/test
 
+# Create a fake HTML file /data/web_static/releases/test/index.html
 echo "
 <html>
   <head>
@@ -29,3 +30,6 @@ echo "
   </body>
 </html>
 " >> data/web/static/releases/test/index.html
+
+# Create a symbolic link /data/web_static/current linked to the /data/web_static/releases/test/ folder.
+ln -s data/web_static/releases/test/ data/web_static/current/
