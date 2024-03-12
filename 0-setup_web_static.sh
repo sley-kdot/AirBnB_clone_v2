@@ -32,4 +32,7 @@ echo "
 " >> data/web/static/releases/test/index.html
 
 # Create a symbolic link /data/web_static/current linked to the /data/web_static/releases/test/ folder.
-ln -s data/web_static/releases/test/ data/web_static/current/
+ln -sf data/web_static/releases/test/ data/web_static/current
+
+# Give ownership of the /data/ folder to the ubuntu user AND group
+chown ubuntu:ubuntu /data/
