@@ -35,8 +35,8 @@ echo "
 ln -sf data/web_static/releases/test/ data/web_static/current
 
 # Give ownership of the /data/ folder to the ubuntu user AND group
-chown ubuntu:ubuntu data/
-
+chown -R ubuntu /data/
+chgrp -R ubuntu /data/
 #
 NEW_LOCATION="\\\n\n\tlocation = /hbnb_static/ {\n\t\talias /dat/web_static/current/;\n\t}"
 sudo sed -i '47i'"$NEW_LOCATION" /etc/nginx/sites-available/default
