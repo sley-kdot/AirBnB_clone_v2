@@ -29,10 +29,17 @@ echo "
     'Hello, Kingsley!'
   </body>
 </html>
-" >> data/web/static/releases/test/index.html
+" >> data/web_static/releases/test/index.html
 
 # Create a symbolic link /data/web_static/current linked to the /data/web_static/releases/test/ folder.
 ln -sf data/web_static/releases/test/ data/web_static/current
 
 # Give ownership of the /data/ folder to the ubuntu user AND group
-chown ubuntu:ubuntu /data/
+chown ubuntu:ubuntu data/
+
+#
+NEW_LOCATION="\\\n\n\tlocation = /hbnb_static/ {\n\t\talias /dat/web_static/current/;\n\t}"
+sudo sed -i '47i'"$NEW_LOCATION" /etc/nginx/sites-available/default
+
+# Restart nginx
+service nginx start
