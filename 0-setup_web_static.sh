@@ -3,7 +3,7 @@
 
 # Install Nginx if it not already installed
 apt-get -y update
-command -v nginx >> /dev/null || apt-get install nginx
+command -v nginx >> /dev/null || apt-get install -y nginx
 
 mkdir -p /data/
 mkdir -p /data/web_static
