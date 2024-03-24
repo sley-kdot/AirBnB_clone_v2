@@ -12,7 +12,7 @@ def do_pack():
     current_datetime = datetime.now()
     str_datetime = current_datetime.strftime("%Y%m%d%H%M%S")
 
-    file_path = f"versions/web_static_{str_datetime}.tar.gz"
+    file_path = "versions/web_static_{}.tgz".format(str_datetime)
     result = local(f"tar -czvf {file_path} web_static")
 
     if result.succeeded:
