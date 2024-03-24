@@ -19,7 +19,7 @@ def hbnb():
     return "HBNB"
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def c(text):
     """displays content of the webpage from the subpath"""
     text = text.replace('_', ' ')
