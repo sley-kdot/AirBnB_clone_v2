@@ -39,10 +39,10 @@ def number(n):
     return f'{n} is a number'
 
 
-# @app.route('/number_template/<int:n>', strict_slashes=False)
-# def number(n):
-#     """displays content of the webpage from the subpath if it's an integer"""
-#     return render_template('5-number.html', number=n)
+@app.route('/number_template/<int:n>', strict_slashes=False)
+def number_template(n):
+    """displays content of the webpage from the subpath if it's an integer"""
+    return render_template('5-number.html', number=n)
 
 
 if __name__ == '__main__':
