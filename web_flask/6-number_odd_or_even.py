@@ -42,7 +42,7 @@ def number(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template(n):
     """
-    displays content on the webpage from the if it's an integer
+    displays content on the webpage if it's an integer
     """
     return render_template('5-number.html', number=n)
 
@@ -50,7 +50,7 @@ def number_template(n):
 @app.route('/number_odd_or_even/<int:num>', strict_slashes=False)
 def number_odd_or_even(num):
     """
-    displays content on the webpage from the subpath if an integer is even or odd
+    displays content on the webpage if an integer is even or odd
     """
     return render_template('6-number_odd_or_even.html', num_var=num)
 
